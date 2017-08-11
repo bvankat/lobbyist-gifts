@@ -41,7 +41,7 @@
 	</div>
 	
 	<div class="today">
-		<h3 id="clean-date"></h3>
+		<h3 id="cleandate"></h3>
 		<h1 id="value"></h1>
 		<p>Gifts today: <span id="number"></span></p>
 		
@@ -70,55 +70,55 @@
 // define a lookup for what text should be displayed for each value in your range
 var rangeValues =
 {
-  "1": { "date":"2017-01-03", "cleandate":"January 3", "number":99, "value":"$4,581", "gifttotal":99, "total":"$4,581"},
-  "2": { "date":"2017-01-04", "cleandate":"January 4", "number":14, "value":"$329", "gifttotal":113, "total":"$4,910"},
-  "3": { "date":"2017-01-05", "cleandate":"January 5", "number":12, "value":"$639", "gifttotal":125, "total":"$5,549"},
-  "4": { "date":"2017-01-06", "cleandate":"January 6", "number":5, "value":"$70", "gifttotal":130, "total":"$5,619"},
-  "5": { "date":"2017-01-09", "cleandate":"January 9", "number":23, "value":"$504", "gifttotal":153, "total":"$6,123"},
-  "6": { "date":"2017-01-10", "cleandate":"January 10", "number":12, "value":"$523", "gifttotal":165, "total":"$6,646"},
-  "7": { "date":"2017-01-11", "cleandate":"January 11", "number":66, "value":"$2,901", "gifttotal":231, "total":"$9,547"},
-  "8": { "date":"2017-01-12", "cleandate":"January 12", "number":3, "value":"$41", "gifttotal":234, "total":"$9,588"},
-  "9": { "date":"2017-01-13", "cleandate":"January 13", "number":7, "value":"$294", "gifttotal":241, "total":"$9,882"},
-  "10": { "date":"2017-01-16", "cleandate":"January 16", "number":23, "value":"$155", "gifttotal":264, "total":"$10,037"},
-  "11": { "date":"2017-01-17", "cleandate":"January 17", "number":37, "value":"$499", "gifttotal":301, "total":"$10,536"},
-  "12": { "date":"2017-01-18", "cleandate":"January 18", "number":15, "value":"$237", "gifttotal":316, "total":"$10,773"},
-  "13": { "date":"2017-01-19", "cleandate":"January 19", "number":53, "value":"$647", "gifttotal":369, "total":"$11,419"},
-  "14": { "date":"2017-01-20", "cleandate":"January 20", "number":9, "value":"$156", "gifttotal":378, "total":"$11,575"},
-  "15": { "date":"2017-01-21", "cleandate":"January 21", "number":1, "value":"$82", "gifttotal":379, "total":"$11,657"},
-  "16": { "date":"2017-01-23", "cleandate":"January 23", "number":5, "value":"$150", "gifttotal":384, "total":"$11,806"},
-  "17": { "date":"2017-01-24", "cleandate":"January 24", "number":49, "value":"$1,648", "gifttotal":433, "total":"$13,455"},
-  "18": { "date":"2017-01-25", "cleandate":"January 25", "number":94, "value":"$1,939", "gifttotal":527, "total":"$15,394"},
-  "19": { "date":"2017-01-26", "cleandate":"January 26", "number":20, "value":"$841", "gifttotal":547, "total":"$16,235"},
-  "20": { "date":"2017-01-27", "cleandate":"January 27", "number":11, "value":"$875", "gifttotal":558, "total":"$17,110"},
-  "21": { "date":"2017-01-28", "cleandate":"January 28", "number":49, "value":"$7,739", "gifttotal":607, "total":"$24,848"},
-  "22": { "date":"2017-01-29", "cleandate":"January 29", "number":2, "value":"$20", "gifttotal":609, "total":"$24,869"},
-  "23": { "date":"2017-01-30", "cleandate":"January 30", "number":18, "value":"$304", "gifttotal":627, "total":"$25,172"},
-  "24": { "date":"2017-01-31", "cleandate":"January 31", "number":21, "value":"$231", "gifttotal":648, "total":"$25,404"},
-  "25": { "date":"2017-02-01", "cleandate":"February 1", "number":101, "value":"$3,626", "gifttotal":749, "total":"$29,030"},
-  "26": { "date":"2017-02-02", "cleandate":"February 2", "number":21, "value":"$618", "gifttotal":770, "total":"$29,648"},
-  "27": { "date":"2017-02-03", "cleandate":"February 3", "number":8, "value":"$162", "gifttotal":778, "total":"$29,810"},
-  "28": { "date":"2017-02-06", "cleandate":"February 6", "number":166, "value":"$31,264", "gifttotal":944, "total":"$61,074"},
-  "29": { "date":"2017-02-07", "cleandate":"February 7", "number":93, "value":"$1,680", "gifttotal":1037, "total":"$62,754"},
-  "30": { "date":"2017-02-08", "cleandate":"February 8", "number":94, "value":"$38,657", "gifttotal":1131, "total":"$101,411"},
-  "31": { "date":"2017-02-09", "cleandate":"February 9", "number":66, "value":"$1,487", "gifttotal":1197, "total":"$102,898"},
-  "32": { "date":"2017-02-10", "cleandate":"February 10", "number":28, "value":"$670", "gifttotal":1225, "total":"$103,568"},
-  "33": { "date":"2017-02-11", "cleandate":"February 11", "number":15, "value":"$565", "gifttotal":1240, "total":"$104,133"},
-  "34": { "date":"2017-02-13", "cleandate":"February 13", "number":78, "value":"$7,503", "gifttotal":1318, "total":"$111,636"},
-  "35": { "date":"2017-02-14", "cleandate":"February 14", "number":84, "value":"$1,816", "gifttotal":1402, "total":"$113,452"},
-  "36": { "date":"2017-02-15", "cleandate":"February 15", "number":275, "value":"$16,628", "gifttotal":1677, "total":"$130,080"},
-  "37": { "date":"2017-02-16", "cleandate":"February 16", "number":68, "value":"$1,212", "gifttotal":1745, "total":"$131,292"},
-  "38": { "date":"2017-02-17", "cleandate":"February 17", "number":11, "value":"$261", "gifttotal":1756, "total":"$131,553"},
-  "39": { "date":"2017-02-18", "cleandate":"February 18", "number":7, "value":"$229", "gifttotal":1763, "total":"$131,782"},
-  "40": { "date":"2017-02-19", "cleandate":"February 19", "number":2, "value":"$18", "gifttotal":1765, "total":"$131,800"},
-  "41": { "date":"2017-02-20", "cleandate":"February 20", "number":73, "value":"$5,468", "gifttotal":1838, "total":"$137,268"},
-  "42": { "date":"2017-02-21", "cleandate":"February 21", "number":50, "value":"$7,216", "gifttotal":1888, "total":"$144,485"},
-  "43": { "date":"2017-02-22", "cleandate":"February 22", "number":171, "value":"$5,017", "gifttotal":2059, "total":"$149,502"},
-  "44": { "date":"2017-02-23", "cleandate":"February 23", "number":31, "value":"$388", "gifttotal":2090, "total":"$149,890"},
-  "45": { "date":"2017-02-24", "cleandate":"February 24", "number":11, "value":"$141", "gifttotal":2101, "total":"$150,031"},
-  "46": { "date":"2017-02-25", "cleandate":"February 25", "number":4, "value":"$138", "gifttotal":2105, "total":"$150,169"},
-  "47": { "date":"2017-02-26", "cleandate":"February 26", "number":5, "value":"$535", "gifttotal":2110, "total":"$150,703"},
-  "48": { "date":"2017-02-27", "cleandate":"February 27", "number":65, "value":"$17,188", "gifttotal":2175, "total":"$167,892"},
-  "49": { "date":"2017-02-28", "cleandate":"February 28", "number":118, "value":"$18,684", "gifttotal":2293, "total":"$186,576"},
+  "1": { "date":"2017-01-03", "cleandate":"Jan. 3", "number":99, "value":"$4,581", "gifttotal":99, "total":"$4,581"},
+  "2": { "date":"2017-01-04", "cleandate":"Jan. 4", "number":14, "value":"$329", "gifttotal":113, "total":"$4,910"},
+  "3": { "date":"2017-01-05", "cleandate":"Jan. 5", "number":12, "value":"$639", "gifttotal":125, "total":"$5,549"},
+  "4": { "date":"2017-01-06", "cleandate":"Jan. 6", "number":5, "value":"$70", "gifttotal":130, "total":"$5,619"},
+  "5": { "date":"2017-01-09", "cleandate":"Jan. 9", "number":23, "value":"$504", "gifttotal":153, "total":"$6,123"},
+  "6": { "date":"2017-01-10", "cleandate":"Jan. 10", "number":12, "value":"$523", "gifttotal":165, "total":"$6,646"},
+  "7": { "date":"2017-01-11", "cleandate":"Jan. 11", "number":66, "value":"$2,901", "gifttotal":231, "total":"$9,547"},
+  "8": { "date":"2017-01-12", "cleandate":"Jan. 12", "number":3, "value":"$41", "gifttotal":234, "total":"$9,588"},
+  "9": { "date":"2017-01-13", "cleandate":"Jan. 13", "number":7, "value":"$294", "gifttotal":241, "total":"$9,882"},
+  "10": { "date":"2017-01-16", "cleandate":"Jan. 16", "number":23, "value":"$155", "gifttotal":264, "total":"$10,037"},
+  "11": { "date":"2017-01-17", "cleandate":"Jan. 17", "number":37, "value":"$499", "gifttotal":301, "total":"$10,536"},
+  "12": { "date":"2017-01-18", "cleandate":"Jan. 18", "number":15, "value":"$237", "gifttotal":316, "total":"$10,773"},
+  "13": { "date":"2017-01-19", "cleandate":"Jan. 19", "number":53, "value":"$647", "gifttotal":369, "total":"$11,419"},
+  "14": { "date":"2017-01-20", "cleandate":"Jan. 20", "number":9, "value":"$156", "gifttotal":378, "total":"$11,575"},
+  "15": { "date":"2017-01-21", "cleandate":"Jan. 21", "number":1, "value":"$82", "gifttotal":379, "total":"$11,657"},
+  "16": { "date":"2017-01-23", "cleandate":"Jan. 23", "number":5, "value":"$150", "gifttotal":384, "total":"$11,806"},
+  "17": { "date":"2017-01-24", "cleandate":"Jan. 24", "number":49, "value":"$1,648", "gifttotal":433, "total":"$13,455"},
+  "18": { "date":"2017-01-25", "cleandate":"Jan. 25", "number":94, "value":"$1,939", "gifttotal":527, "total":"$15,394"},
+  "19": { "date":"2017-01-26", "cleandate":"Jan. 26", "number":20, "value":"$841", "gifttotal":547, "total":"$16,235"},
+  "20": { "date":"2017-01-27", "cleandate":"Jan. 27", "number":11, "value":"$875", "gifttotal":558, "total":"$17,110"},
+  "21": { "date":"2017-01-28", "cleandate":"Jan. 28", "number":49, "value":"$7,739", "gifttotal":607, "total":"$24,848"},
+  "22": { "date":"2017-01-29", "cleandate":"Jan. 29", "number":2, "value":"$20", "gifttotal":609, "total":"$24,869"},
+  "23": { "date":"2017-01-30", "cleandate":"Jan. 30", "number":18, "value":"$304", "gifttotal":627, "total":"$25,172"},
+  "24": { "date":"2017-01-31", "cleandate":"Jan. 31", "number":21, "value":"$231", "gifttotal":648, "total":"$25,404"},
+  "25": { "date":"2017-02-01", "cleandate":"Feb. 1", "number":101, "value":"$3,626", "gifttotal":749, "total":"$29,030"},
+  "26": { "date":"2017-02-02", "cleandate":"Feb. 2", "number":21, "value":"$618", "gifttotal":770, "total":"$29,648"},
+  "27": { "date":"2017-02-03", "cleandate":"Feb. 3", "number":8, "value":"$162", "gifttotal":778, "total":"$29,810"},
+  "28": { "date":"2017-02-06", "cleandate":"Feb. 6", "number":166, "value":"$31,264", "gifttotal":944, "total":"$61,074"},
+  "29": { "date":"2017-02-07", "cleandate":"Feb. 7", "number":93, "value":"$1,680", "gifttotal":1037, "total":"$62,754"},
+  "30": { "date":"2017-02-08", "cleandate":"Feb. 8", "number":94, "value":"$38,657", "gifttotal":1131, "total":"$101,411"},
+  "31": { "date":"2017-02-09", "cleandate":"Feb. 9", "number":66, "value":"$1,487", "gifttotal":1197, "total":"$102,898"},
+  "32": { "date":"2017-02-10", "cleandate":"Feb. 10", "number":28, "value":"$670", "gifttotal":1225, "total":"$103,568"},
+  "33": { "date":"2017-02-11", "cleandate":"Feb. 11", "number":15, "value":"$565", "gifttotal":1240, "total":"$104,133"},
+  "34": { "date":"2017-02-13", "cleandate":"Feb. 13", "number":78, "value":"$7,503", "gifttotal":1318, "total":"$111,636"},
+  "35": { "date":"2017-02-14", "cleandate":"Feb. 14", "number":84, "value":"$1,816", "gifttotal":1402, "total":"$113,452"},
+  "36": { "date":"2017-02-15", "cleandate":"Feb. 15", "number":275, "value":"$16,628", "gifttotal":1677, "total":"$130,080"},
+  "37": { "date":"2017-02-16", "cleandate":"Feb. 16", "number":68, "value":"$1,212", "gifttotal":1745, "total":"$131,292"},
+  "38": { "date":"2017-02-17", "cleandate":"Feb. 17", "number":11, "value":"$261", "gifttotal":1756, "total":"$131,553"},
+  "39": { "date":"2017-02-18", "cleandate":"Feb. 18", "number":7, "value":"$229", "gifttotal":1763, "total":"$131,782"},
+  "40": { "date":"2017-02-19", "cleandate":"Feb. 19", "number":2, "value":"$18", "gifttotal":1765, "total":"$131,800"},
+  "41": { "date":"2017-02-20", "cleandate":"Feb. 20", "number":73, "value":"$5,468", "gifttotal":1838, "total":"$137,268"},
+  "42": { "date":"2017-02-21", "cleandate":"Feb. 21", "number":50, "value":"$7,216", "gifttotal":1888, "total":"$144,485"},
+  "43": { "date":"2017-02-22", "cleandate":"Feb. 22", "number":171, "value":"$5,017", "gifttotal":2059, "total":"$149,502"},
+  "44": { "date":"2017-02-23", "cleandate":"Feb. 23", "number":31, "value":"$388", "gifttotal":2090, "total":"$149,890"},
+  "45": { "date":"2017-02-24", "cleandate":"Feb. 24", "number":11, "value":"$141", "gifttotal":2101, "total":"$150,031"},
+  "46": { "date":"2017-02-25", "cleandate":"Feb. 25", "number":4, "value":"$138", "gifttotal":2105, "total":"$150,169"},
+  "47": { "date":"2017-02-26", "cleandate":"Feb. 26", "number":5, "value":"$535", "gifttotal":2110, "total":"$150,703"},
+  "48": { "date":"2017-02-27", "cleandate":"Feb. 27", "number":65, "value":"$17,188", "gifttotal":2175, "total":"$167,892"},
+  "49": { "date":"2017-02-28", "cleandate":"Feb. 28", "number":118, "value":"$18,684", "gifttotal":2293, "total":"$186,576"},
   "50": { "date":"2017-03-01", "cleandate":"March 1", "number":127, "value":"$3,809", "gifttotal":2420, "total":"$190,384"},
   "51": { "date":"2017-03-02", "cleandate":"March 2", "number":27, "value":"$5,782", "gifttotal":2447, "total":"$196,166"},
   "52": { "date":"2017-03-03", "cleandate":"March 3", "number":4, "value":"$104", "gifttotal":2451, "total":"$196,270"},
@@ -199,7 +199,7 @@ $(function () {
     // on page load, set the text of the label based the value of the range
     $('#rangeText').text(rangeValues[$('#rangeInput').val()].cleandate);
     $('#total').text(rangeValues[$('#rangeInput').val()].total);
-    $('#clean-date').text(rangeValues[$('#rangeInput').val()].cleandate);
+    $('#cleandate').text(rangeValues[$('#rangeInput').val()].cleandate);
     $('#number').text(rangeValues[$('#rangeInput').val()].number);
     $('#value').text(rangeValues[$('#rangeInput').val()].value);
     $('#gifttotal').text(rangeValues[$('#rangeInput').val()].gifttotal);
@@ -208,7 +208,7 @@ $(function () {
     $('#rangeInput').on('input change', function () {
 	    var obj = rangeValues[$(this).val()];
         $('#rangeText').text(obj.cleandate);
-        $('clean-date').text(obj.cleandate);
+        $('#cleandate').text(obj.cleandate);
         $('#total').text(obj.total);
         $('#number').text(obj.number);
         $('#value').text(obj.value);
